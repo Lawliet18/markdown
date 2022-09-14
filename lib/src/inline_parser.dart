@@ -136,7 +136,7 @@ class InlineParser {
   /// https://spec.commonmark.org/0.29/#-look-for-link-or-image-.
   void _linkOrImage() {
     final index = _delimiterStack
-        .lastIndexWhere((d) => d.char == $lbracket || d.char == $exclamation);
+        .lastIndexWhere((d) => d.char == $lbracket || d.char == $exclamation || d.char == $dollar);
     if (index == -1) {
       // Never found a possible open bracket. This is just a literal "]".
       addNode(Text(']'));
